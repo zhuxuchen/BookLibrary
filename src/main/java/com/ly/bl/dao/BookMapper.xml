@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.bl.dao.BookMapper">
+
+    <resultMap id="RecoderMapper" type="Recoder">
+        <id column="id" property="id"/>
+        <result column="borrowtime" property="borrowtime"/>
+        <result column="remandtime" property="remandtime"/>
+        <association property="user">
+            <id property="id" column="u_id"/>
+            <result column="user_name" property="name"/>
+        </association>
+    </resultMap>
+    <select id="selectRecoderByBookId" parameterType="Integer" resultMap="RecoderMapper">
+        select record.*,u.id as u_id ,u.name as user_name
+        from record
+        left join user u on u.id = record.user_id
+        where book_id = #{id} and state = 1
+    </select>
+    
+    <resultMap id="booksMap" type="Book">
+        <association property="currentRecoder" column="id" select="selectRecoderByBookId"/>
+    </resultMap>
+    <!--List<Book> getAllBooks();-->
+    <select id="getAllBooks" resultMap="booksMap">
+       select * from book
+    </select>
+</mapper>

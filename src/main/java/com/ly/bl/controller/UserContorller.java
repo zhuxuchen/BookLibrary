@@ -20,10 +20,10 @@ public class UserContorller {
         return "login";
     }
 
-    @RequestMapping("books.html")
-    public String bookPage(){
-        return "books";
-    }
+//    @RequestMapping("books.html")
+//    public String bookPage(){
+//        return "books";
+//    }
 
     //登录功能
     @RequestMapping("login.do")
