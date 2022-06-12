@@ -51,6 +51,7 @@ function resetStyle() {
 }
 //查询id对应的图书信息，并将图书信息回显到编辑或借阅的窗口中
 function findBookById(id,doname) {	
+    console.log("xxxxxxxxxxx")
     resetStyle()
     
     var url = getProjectPath()+"/getbookbyid?id=" + id;

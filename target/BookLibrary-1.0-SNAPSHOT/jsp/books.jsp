@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/_all-skins.min.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/my.js"></script>
     <script type="text/javascript">
         function SetIFrameHeight() {
             var iframeid = document.getElementById("iframe");
@@ -97,7 +98,7 @@
                                 </button>
                             </c:if>
                             <c:if test="${b.currentRecoder == null}">
-                                <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal" onclick="findBookById(1,&#39;borrow&#39;)"> 借阅
+                                <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal" onclick="findBookById(${b.id},&#39;borrow&#39;)"> 借阅
                                 </button>
                             </c:if>
                         </td>
