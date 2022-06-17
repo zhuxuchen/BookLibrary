@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
          pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
@@ -84,12 +85,14 @@
                         </td>
                         <td>
                             <c:if test="${b.currentRecoder != null}">
-                                ${b.currentRecoder.borrowtime}
+                                <fmt:formatDate pattern="yyyy-MM-dd"
+                                                value="${b.currentRecoder.borrowtime}" />
                             </c:if>
                         </td>
                         <td>
                             <c:if test="${b.currentRecoder != null}">
-                                ${b.currentRecoder.remandtime}
+                                <fmt:formatDate pattern="yyyy-MM-dd"
+                                                value="${b.currentRecoder.remandtime}" />
                             </c:if>
                         </td>
                         <td class="text-center">
@@ -150,7 +153,7 @@
             </div>
             <div class="modal-footer">
 
-                <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="borrow()" disabled="disabled" id="savemsg">保存
+                <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="borrowBook()" disabled="disabled" id="savemsg">保存
                 </button>
                 <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
             </div>

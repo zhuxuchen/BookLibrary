@@ -1,6 +1,7 @@
 package com.ly.bl.entity;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 public class Recoder {
 	private int id;

@@ -23,7 +23,7 @@ function cg() {
     }
 }
 //点击借阅图书时执行
-function borrow() {
+function borrowBook() {
     var url =getProjectPath()+ "/borrow";
     $.post(url, $("#borrowBook").serialize(), function (response) {
         // alert(response.message)
@@ -31,6 +31,7 @@ function borrow() {
         //     window.location.href = getProjectPath()+"/book/search";
         // }
         alert('发送成功！')
+        window.location.reload();
     })
 }
 

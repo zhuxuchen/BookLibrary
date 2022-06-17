@@ -43,9 +43,9 @@ public class BookController {
         System.out.println("id : " + id + ", returnTime : " + returnTime);
         Recoder recoder = new Recoder();
         recoder.setBook_id(id);
-        recoder.setBorrowtime((java.sql.Date) new Date());
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-        recoder.setRemandtime((java.sql.Date) df.parse(returnTime));
+        recoder.setBorrowtime(new Date());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        recoder.setRemandtime(df.parse(returnTime));
         //差一个用户id
         User user = (User) httpSession.getAttribute("user");
         recoder.setUser_id(user.getId());
@@ -54,8 +54,8 @@ public class BookController {
         return "ok";
     }
 
-    @RequestMapping("/borrow.html")
-    public String currentBorrowPage(HttpSession httpSession, Model model){
-        return "borrow";
-    }
+//    @RequestMapping("/borrow.html")
+//    public String currentBorrowPage(HttpSession httpSession, Model model){
+//        return "borrow";
+//    }
 }
