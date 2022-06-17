@@ -10,4 +10,7 @@ public interface BookMapper {
 
     Book getBookById(int id);
 
+    //根据用户id查询当前借阅的图书
+    List<Book> getCurrentBorrowByUserid(int user_id);
+
 }

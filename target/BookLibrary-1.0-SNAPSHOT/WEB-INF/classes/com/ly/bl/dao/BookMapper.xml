@@ -32,4 +32,7 @@
     <select id="getBookById" resultType="Book" parameterType="Integer">
         select * from book where id = #{id}
     </select>
+
+    <!--List<Book> getCurrentBorrowByUserid(int user_id);-->
+
 </mapper>

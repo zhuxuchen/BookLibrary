@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.bl.dao.RecoderMapper">
+    <!--int addBorrowRecoder(Recoder recoder);-->
+    <insert id="addBorrowRecoder" parameterType="Recoder">
+        insert into record values (null,#{borrowtime},#{remandtime},#{user_id},#{book_id},1)
+    </insert>
+</mapper>

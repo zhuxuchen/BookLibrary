@@ -24,12 +24,13 @@ function cg() {
 }
 //点击借阅图书时执行
 function borrow() {
-    var url =getProjectPath()+ "/book/borrowBook";
+    var url =getProjectPath()+ "/borrow";
     $.post(url, $("#borrowBook").serialize(), function (response) {
-        alert(response.message)
-        if (response.success == true) {
-            window.location.href = getProjectPath()+"/book/search";
-        }
+        // alert(response.message)
+        // if (response.success == true) {
+        //     window.location.href = getProjectPath()+"/book/search";
+        // }
+        alert('发送成功！')
     })
 }
 

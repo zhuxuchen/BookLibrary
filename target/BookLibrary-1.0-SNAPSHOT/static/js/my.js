@@ -24,12 +24,13 @@ function cg() {
 }
 //点击借阅图书时执行
 function borrow() {
-    var url =getProjectPath()+ "/book/borrowBook";
+    var url =getProjectPath()+ "/borrow";
     $.post(url, $("#borrowBook").serialize(), function (response) {
-        alert(response.message)
-        if (response.success == true) {
-            window.location.href = getProjectPath()+"/book/search";
-        }
+        // alert(response.message)
+        // if (response.success == true) {
+        //     window.location.href = getProjectPath()+"/book/search";
+        // }
+        alert('发送成功！')
     })
 }
 
@@ -51,6 +52,7 @@ function resetStyle() {
 }
 //查询id对应的图书信息，并将图书信息回显到编辑或借阅的窗口中
 function findBookById(id,doname) {	
+    console.log("xxxxxxxxxxx")
     resetStyle()
     
     var url = getProjectPath()+"/getbookbyid?id=" + id;

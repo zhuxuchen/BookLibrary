@@ -8,5 +8,5 @@ import java.util.List;
 public interface BookService {
     List<Book> getAllBooks();
     Book getBookById(int id);
-    //int addBorrowRecoder(Recoder recoder);
+    int addBorrowRecoder(Recoder recoder);
 }

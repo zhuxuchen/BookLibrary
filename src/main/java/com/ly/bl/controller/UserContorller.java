@@ -27,12 +27,14 @@ public class UserContorller {
 
     //登录功能
     @RequestMapping("login.do")
-    public String loginDO(String email, String password, Model model){
+    public String loginDO(String email, String password, Model model,
+                          HttpSession httpSession){
         User user = userService.loginCheck(email,password);
         if (user == null){
             model.addAttribute("msg","用户名或密码错误！");
             return "login";
         }
+        httpSession.setAttribute("user",user);
         return "redirect:/books.html";
     }
 }
