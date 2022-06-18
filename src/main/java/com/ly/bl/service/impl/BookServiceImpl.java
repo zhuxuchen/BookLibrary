@@ -33,4 +33,9 @@ public class BookServiceImpl implements BookService {
     public int addBorrowRecoder(Recoder recoder) {
         return recoderMapper.addBorrowRecoder(recoder);
     }
+
+    @Override
+    public List<Book> getCurrentBorrowByUserid(int user_id) {
+        return bookMapper.getCurrentBorrowByUserid(user_id);
+    }
 }

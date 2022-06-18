@@ -37,4 +37,11 @@ public class UserContorller {
         httpSession.setAttribute("user",user);
         return "redirect:/books.html";
     }
+
+    //退出登录
+    @RequestMapping("logout.do")
+    public String logoutDO(HttpSession session){
+        session.invalidate();
+        return "redirect:" +  "/login.html";
+    }
 }

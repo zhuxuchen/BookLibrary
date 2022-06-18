@@ -9,4 +9,5 @@ public interface BookService {
     List<Book> getAllBooks();
     Book getBookById(int id);
     int addBorrowRecoder(Recoder recoder);
+    List<Book> getCurrentBorrowByUserid(int user_id);
 }

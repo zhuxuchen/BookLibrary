@@ -34,5 +34,19 @@
     </select>
 
     <!--List<Book> getCurrentBorrowByUserid(int user_id);-->
-
+    <resultMap id="BookBorrow" type="Book">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="author" column="author"/>
+        <association property="currentRecoder">
+            <id property="id" column="id"/>
+            <result property="borrowtime" column="borrowtime"/>
+            <result property="remandtime" column="remandtime"/>
+        </association>
+    </resultMap>
+    <select id="getCurrentBorrowByUserid" parameterType="Integer" resultMap="BookBorrow">
+        select book.* ,record.id as rid,record.borrowtime,record.remandtime
+        from book,record
+        where book.id = record.book_id and record.state = 1 and record.user_id = #{user_id}
+    </select>
 </mapper>

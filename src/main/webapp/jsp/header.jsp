@@ -12,11 +12,11 @@
                 <li class="dropdown user user-menu">
                     <a>
                         <img src="img/user.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">张三</span>
+                        <span class="hidden-xs">${user.name}</span>
                     </a>
                 </li>
                 <li class="dropdown user user-menu">
-                    <a href="/logout">
+                    <a href="${pageContext.request.contextPath}/logout.do">
                         <span class="hidden-xs">注销</span>
                     </a>
                 </li>

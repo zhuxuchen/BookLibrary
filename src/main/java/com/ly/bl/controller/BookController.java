@@ -54,8 +54,12 @@ public class BookController {
         return "ok";
     }
 
-//    @RequestMapping("/borrow.html")
-//    public String currentBorrowPage(HttpSession httpSession, Model model){
-//        return "borrow";
-//    }
+    @RequestMapping("/borrow.html")
+    public String currentBorrowPage(HttpSession httpSession, Model model){
+        User user = (User) httpSession.getAttribute("user");
+        List<Book> books = bookService.getCurrentBorrowByUserid(user.getId());
+        model.addAttribute("books",books);
+        //System.out.println(books);
+        return "borrow";
+    }
 }

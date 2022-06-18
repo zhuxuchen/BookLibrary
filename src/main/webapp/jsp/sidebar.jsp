@@ -13,12 +13,12 @@
                 </a>
             </li>
             <li>
-                <a href="/book/search">
+                <a href="/BookLibrary/books.html">
                     <i class="fa fa-circle-o"></i>图书借阅
                 </a>
             </li>
             <li>
-                <a href="/book/searchBorrowed">
+                <a href="/BookLibrary/borrow.html">
                     <i class="fa fa-circle-o"></i>当前借阅
                 </a>
             </li>
